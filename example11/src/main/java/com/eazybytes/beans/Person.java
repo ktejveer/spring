@@ -10,7 +10,12 @@ public class Person {
     private String name;
 
 //    @Autowired
-    private Vehicle vehicle;
+    private final Vehicle vehicle;
+
+    @Autowired
+    public Person(Vehicle vehicle){
+        this.vehicle = vehicle;
+    }
 
     @PostConstruct
     public void init(){
@@ -29,8 +34,8 @@ public class Person {
         return vehicle;
     }
 
-    @Autowired
-    public void setVehicle(Vehicle vehicle) {
-        this.vehicle = vehicle;
-    }
+//    @Autowired
+//    public void setVehicle(Vehicle vehicle) {
+//        this.vehicle = vehicle;
+//    }
 }

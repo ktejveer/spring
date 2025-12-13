@@ -1,5 +1,6 @@
 package com.eazybytes.services;
 
+import com.eazybytes.interfaces.LogAspect;
 import com.eazybytes.beans.interfaces.Speaker;
 import com.eazybytes.beans.interfaces.Tyres;
 import com.eazybytes.model.Song;
@@ -37,6 +38,7 @@ public class VehicleService {
         return tyres.rotate();
     }
 
+    @LogAspect
     public String playMusic(boolean vehicleStarted, Song song){
         return speaker.makeSound(song);
     }

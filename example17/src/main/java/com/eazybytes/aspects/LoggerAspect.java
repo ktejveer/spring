@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 public class LoggerAspect {
     private Logger logger = Logger.getLogger(LoggerAspect.class.getName());
 
-    @Around("execution(* com.eazybytes.services.*.*(..))")
+//    @Around("execution(* com.eazybytes.services.*.*(..))")
     public void log(ProceedingJoinPoint joinPoint) throws Throwable {
         logger.info(joinPoint.getSignature().toString() + " method execution start");
         Instant start = Instant.now();
@@ -39,5 +39,16 @@ public class LoggerAspect {
     @AfterReturning(value = "execution(* com.example.services.*.*(..))", returning ="retVal")
     public void logStatus(JoinPoint joinPoint, Object retVal){
         logger.log(Level.INFO, joinPoint.getSignature() + " method successfully processed with the status "+retVal.toString());
+    }
+
+    @Around("@annotation(com.eazybytes.interfaces.LogAspect)")
+    public void logWithAnnotation(ProceedingJoinPoint joinPoint) throws Throwable {
+        logger.info(joinPoint.getSignature().toString() + " method execution start");
+        Instant start = Instant.now();
+        joinPoint.proceed();
+        Instant finish = Instant.now();
+        long timeElapsed = Duration.between(start, finish).toMillis();
+        logger.info("Time took to execute the method : "+timeElapsed);
+        logger.info(joinPoint.getSignature().toString() + "method execution end");
     }
 }

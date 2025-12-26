@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.eazybytes</groupId>
-	<artifactId>example_19</artifactId>
+	<artifactId>example19</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>example_19</name>
 	<description>Eazy School back end Application</description>

@@ -1,0 +1,10 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /eazyschool
+
+spring:
+  security:
+    user:
+      name: tejveer
+      password: 12345

@@ -1,6 +1,4 @@
---create schema if not exists testdb;
-
-create table if not exists testdb.contact_msg(
+create table if not exists contact_msg(
 contact_id int AUTO_INCREMENT primary key,
 name varchar(100) not null,
 mobile_num varchar(10) not null,

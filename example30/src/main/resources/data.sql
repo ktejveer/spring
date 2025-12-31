@@ -1,0 +1,2 @@
+insert into contact_msg(name, mobile_num, email, subject, message, status, created_at, created_by, updated_at, updated_by)
+values('Tejveer', '8700559004', 'ktejveer@gmail.com', 'student progress', 'Students are not progressing as per the standards!', 'new', now(), 'Tejveer', null, null);
